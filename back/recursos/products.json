@@ -1,0 +1,90 @@
+[
+  {
+    "name": "Camiseta Deportivo Cali",
+    "image": "/image/camiseta.png",
+    "description": "Fabricada en las mejores fibras sinteticas, fresca y a la moda",
+    "brand": "Adidas",
+    "category": "Deporte",
+    "price": 100.99,
+    "countInStock": 7,
+    "rating": 5,
+    "numReviews": 10
+  },
+  {
+    "name": "Airpods Wireless Bluetooth ",
+    "image": "/image/airpods.jpg",
+    "description": "Experimenta calidad de audio de nivel profesional, los audifonos incluyen microfono para atender las llamadas, y su estuche de carga",
+    "brand": "Apple",
+    "category": "Electronics",
+    "price": 89.99,
+    "countInStock": 10,
+    "rating": 4.5,
+    "numReviews": 12
+  },
+  {
+    "name": "iPhone 13 Pro 256GB de Memoria",
+    "image": "/image/phone.jpg",
+    "description": "Presentando el Iphone 13, triple camara y bateria con extensa duracion",
+    "brand": "Apple",
+    "category": "Electronics",
+    "price": 599.99,
+    "countInStock": 7,
+    "rating": 4.0,
+    "numReviews": 8
+  },
+  {
+    "name": "Cannon EOS 80D DSLR Camara",
+    "image": "/image/camera.jpg",
+    "description": "Una de las camara mas usadas, muy versatil para el uso profesional y aficionado",
+    "brand": "Cannon",
+    "category": "Electronics",
+    "price": 929.99,
+    "countInStock": 5,
+    "rating": 3,
+    "numReviews": 12
+  },
+  {
+    "name": "Sony Playstation 5",
+    "image": "/image/playstation.jpg",
+    "description": "El centro de entretenimiento apropiado para ti, Juegos en HD, sonido de alta definicion, excelente conexion a Internet",
+    "brand": "Sony",
+    "category": "Electronics",
+    "price": 399.99,
+    "countInStock": 11,
+    "rating": 5,
+    "numReviews": 12
+  },
+  {
+    "name": "Logitech G-Series Mouse",
+    "image": "/image/mouse.jpg",
+    "description": "Para los gamers mas exigentes, un mouse ergonomico, todos sus botones son programables, tremenda calidad de fabricacion",
+    "brand": "Logitech",
+    "category": "Electronics",
+    "price": 49.99,
+    "countInStock": 7,
+    "rating": 2.5,
+    "numReviews": 10
+  },
+  {
+    "name": "Amazon Echo Dot 3ra Generacion",
+    "image": "/image/alexa.jpg",
+    "description": "Conoce Echo Dot - el parlante inteligente mas popular, diseño compacto para usar en cualquier espacio",
+    "brand": "Amazon",
+    "category": "Electronics",
+    "price": 29.99,
+    "countInStock": 0,
+    "rating": 1,
+    "numReviews": 12
+  },
+  {
+    "name": "Tenis de moda",
+    "image": "/image/zapatilla.jpg",
+    "description": "Listas para ir al gym, o en tu vestuario de ropa casual, disponible en 3 colores, materiales sinteticos de alta durabilidad",
+    "brand": "Nike",
+    "category": "Deportes",
+    "price": 170.99,
+    "countInStock": 25,
+    "rating": 2.5,
+    "numReviews": 4
+  }
+]
