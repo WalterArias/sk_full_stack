@@ -22,7 +22,7 @@ const ProductListScreen = () => {
     try {
       setIsLoading(true);
       const response = await productService.getProducts('', pageNumber || 1);
-      setData(response.data);
+      setData(response);
       setError(null);
     } catch (err) {
       setError(err?.response?.data?.message || err.message);

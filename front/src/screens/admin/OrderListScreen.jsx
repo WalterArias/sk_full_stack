@@ -16,7 +16,7 @@ const OrderListScreen = () => {
       try {
         setIsLoading(true);
         const response = await orderService.getOrders();
-        setOrders(response.data);
+        setOrders(response);
         setError(null);
       } catch (err) {
         setError(err?.response?.data?.message || err.message);

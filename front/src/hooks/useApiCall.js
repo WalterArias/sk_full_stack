@@ -10,7 +10,7 @@ export const useApiCall = (apiFunction) => {
     try {
       const response = await apiFunction(...args);
       setIsLoading(false);
-      return response.data;
+      return response;
     } catch (err) {
       const errorMessage = err.response?.data?.message || err.message;
       setError(errorMessage);

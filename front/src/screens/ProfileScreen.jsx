@@ -35,7 +35,7 @@ const ProfileScreen = () => {
       try {
         setOrdersLoading(true);
         const response = await orderService.getMyOrders();
-        setOrders(response.data);
+        setOrders(response);
         setOrdersError(null);
       } catch (err) {
         setOrdersError(err?.response?.data?.message || err.message);

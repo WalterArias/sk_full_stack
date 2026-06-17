@@ -28,7 +28,7 @@ const UserEditScreen = () => {
       try {
         setIsLoading(true);
         const response = await userService.getUserDetails(userId);
-        setUser(response.data);
+        setUser(response);
         setError(null);
       } catch (err) {
         setError(err?.response?.data?.message || err.message);

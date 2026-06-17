@@ -71,7 +71,7 @@ const ProductScreen = () => {
       });
       // Refetch product to get updated reviews
       const response = await productService.getProductDetails(productId);
-      setProduct(response.data);
+      setProduct(response);
       setRating(0);
       setComment("");
       toast.success("Review created successfully");

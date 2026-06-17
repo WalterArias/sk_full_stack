@@ -33,7 +33,7 @@ const OrderScreen = () => {
       try {
         setIsLoading(true);
         const response = await orderService.getOrderDetails(orderId);
-        setOrder(response.data);
+        setOrder(response);
         setError(null);
       } catch (err) {
         setError(err?.response?.data?.message || err.message);
@@ -50,7 +50,7 @@ const OrderScreen = () => {
       try {
         setPaypalLoading(true);
         const response = await orderService.getPaypalClientId();
-        setPaypalClientId(response.data.clientId);
+        setPaypalClientId(response.clientId);
       } catch (err) {
         console.error("Error fetching PayPal client ID:", err);
       } finally {
@@ -85,7 +85,7 @@ const OrderScreen = () => {
       await payOrder(orderId, details);
       // Refetch order
       const response = await orderService.getOrderDetails(orderId);
-      setOrder(response.data);
+      setOrder(response);
       toast.success("Order is paid");
     } catch (err) {
       toast.error(err?.response?.data?.message || err.message);
@@ -114,7 +114,7 @@ const OrderScreen = () => {
     try {
       await deliverOrder(orderId);
       const response = await orderService.getOrderDetails(orderId);
-      setOrder(response.data);
+      setOrder(response);
       toast.success("Order marked as delivered");
     } catch (err) {
       toast.error(err?.response?.data?.message || err.message);
