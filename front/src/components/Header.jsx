@@ -25,17 +25,17 @@ const Header = () => {
 
   return (
     <header>
-      <Navbar bg="primary" variant="dark" expand="lg" collapseOnSelect>
+      <Navbar bg="light" expand="lg" collapseOnSelect>
         <Container>
           <Navbar.Brand as={Link} to="/">
-         {/*    <img src={logo} alt="ProShop" /> */} SuperKompra
+            <img src={logo} alt="superkompra" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
               <SearchBox />
               <Nav.Link as={Link} to="/cart">
-                <FaShoppingCart /> Cart
+                <FaShoppingCart /> Carrito
                 {cartItems.length > 0 && (
                   <Badge pill bg="success" style={{ marginLeft: "5px" }}>
                     {cartItems.reduce((a, c) => a + c.qty, 0)}
@@ -46,7 +46,7 @@ const Header = () => {
                 <>
                   <NavDropdown title={userInfo.name} id="username">
                     <NavDropdown.Item as={Link} to="/profile">
-                      Profile
+                      Perfil
                     </NavDropdown.Item>
                     <NavDropdown.Item onClick={logoutHandler}>
                       Logout
@@ -55,7 +55,7 @@ const Header = () => {
                 </>
               ) : (
                 <Nav.Link as={Link} to="/login">
-                  <FaUser /> Sign In
+                  <FaUser /> Ingresar
                 </Nav.Link>
               )}
 
