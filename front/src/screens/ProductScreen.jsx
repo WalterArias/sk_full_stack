@@ -14,7 +14,7 @@ import { toast } from "react-toastify";
 import Rating from "../components/Rating";
 import Loader from "../components/Loader";
 import Message from "../components/Message";
-import Meta from "../components/Meta";
+/* import Meta from "../components/Meta"; */
 import { useCart } from "../context/CartContext";
 import { useAuth } from "../context/AuthContext";
 import { productService } from "../services/productService";
@@ -44,7 +44,7 @@ const ProductScreen = () => {
       try {
         setIsLoading(true);
         const response = await productService.getProductDetails(productId);
-        setProduct(response.data);
+        setProduct(response);
         setError(null);
       } catch (err) {
         setError(err?.response?.data?.message || err.message);
@@ -91,7 +91,7 @@ const ProductScreen = () => {
         <Message variant="danger">{error}</Message>
       ) : product ? (
         <>
-          <Meta title={product.name} description={product.description} />
+       {/*    <Meta title={product.name} description={product.description} /> */}
           <Row>
             <Col md={6}>
               <Image src={product.image} alt={product.name} fluid />
