@@ -77,7 +77,7 @@ const router = createBrowserRouter(
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    {/*   <HelmetProvider> */}
+
     <AuthProvider>
       <CartProvider>
         {/*  <PayPalScriptProvider deferLoading={true}> */}
@@ -85,6 +85,6 @@ root.render(
         {/* </PayPalScriptProvider> */}
       </CartProvider>
     </AuthProvider>
-    {/*     </HelmetProvider> */}
+
   </React.StrictMode>,
 );
