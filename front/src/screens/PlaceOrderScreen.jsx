@@ -1,13 +1,13 @@
-import React, { useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
-import { Button, Row, Col, ListGroup, Image, Card } from 'react-bootstrap';
-import Message from '../components/Message';
-import CheckoutSteps from '../components/CheckoutSteps';
-import Loader from '../components/Loader';
-import { useCart } from '../context/CartContext';
-import { orderService } from '../services/orderService';
-import { useApiCall } from '../hooks/useApiCall';
+import React, { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { Button, Row, Col, ListGroup, Image, Card } from "react-bootstrap";
+import Message from "../components/Message";
+import CheckoutSteps from "../components/CheckoutSteps";
+import Loader from "../components/Loader";
+import { useCart } from "../context/CartContext";
+import { orderService } from "../services/orderService";
+import { useApiCall } from "../hooks/useApiCall";
 
 const PlaceOrderScreen = () => {
   const navigate = useNavigate();
@@ -23,14 +23,14 @@ const PlaceOrderScreen = () => {
   } = useCart();
 
   const [createOrder, { isLoading, error }] = useApiCall(
-    orderService.createOrder
+    orderService.createOrder,
   );
 
   useEffect(() => {
     if (!shippingAddress.address) {
-      navigate('/shipping');
+      navigate("/shipping");
     } else if (!paymentMethod) {
-      navigate('/payment');
+      navigate("/payment");
     }
   }, [paymentMethod, shippingAddress.address, navigate]);
 
@@ -57,19 +57,19 @@ const PlaceOrderScreen = () => {
       <CheckoutSteps step1 step2 step3 step4 />
       <Row>
         <Col md={8}>
-          <ListGroup variant='flush'>
+          <ListGroup variant="flush">
             <ListGroup.Item>
-              <h2>Shipping</h2>
+              <h2>Envio</h2>
               <p>
-                <strong>Address:</strong>
-                {shippingAddress.address}, {shippingAddress.city}{' '}
+                <strong>Dirección:</strong>
+                {shippingAddress.address}, {shippingAddress.city}{" "}
                 {shippingAddress.postalCode}, {shippingAddress.country}
               </p>
             </ListGroup.Item>
 
             <ListGroup.Item>
-              <h2>Payment Method</h2>
-              <strong>Method: </strong>
+              <h2>Metodo de Pago</h2>
+              <strong>Metodo: </strong>
               {paymentMethod}
             </ListGroup.Item>
 
@@ -78,7 +78,7 @@ const PlaceOrderScreen = () => {
               {cartItems.length === 0 ? (
                 <Message>Your cart is empty</Message>
               ) : (
-                <ListGroup variant='flush'>
+                <ListGroup variant="flush">
                   {cartItems.map((item, index) => (
                     <ListGroup.Item key={index}>
                       <Row>
@@ -109,9 +109,9 @@ const PlaceOrderScreen = () => {
         </Col>
         <Col md={4}>
           <Card>
-            <ListGroup variant='flush'>
+            <ListGroup variant="flush">
               <ListGroup.Item>
-                <h2>Order Summary</h2>
+                <h2>Resumen del pedido</h2>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
@@ -121,7 +121,7 @@ const PlaceOrderScreen = () => {
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col>Shipping</Col>
+                  <Col>Envio</Col>
                   <Col>${shippingPrice}</Col>
                 </Row>
               </ListGroup.Item>
@@ -138,16 +138,16 @@ const PlaceOrderScreen = () => {
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
-                {error && <Message variant='danger'>{error}</Message>}
+                {error && <Message variant="danger">{error}</Message>}
               </ListGroup.Item>
               <ListGroup.Item>
                 <Button
-                  type='button'
-                  className='btn-block'
+                  type="button"
+                  className="btn-block"
                   disabled={cartItems === 0}
                   onClick={placeOrderHandler}
                 >
-                  Place Order
+                  Realizar Pedido
                 </Button>
                 {isLoading && <Loader />}
               </ListGroup.Item>

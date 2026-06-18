@@ -36,7 +36,7 @@ const ProductListScreen = () => {
   }, [pageNumber]);
 
   const deleteHandler = async (id) => {
-    if (window.confirm('Are you sure')) {
+    if (window.confirm('Esta seguro que desea eliminar este producto?')) {
       try {
         setLoadingDelete(true);
         await productService.deleteProduct(id);
@@ -51,7 +51,7 @@ const ProductListScreen = () => {
   };
 
   const createProductHandler = async () => {
-    if (window.confirm('Are you sure you want to create a new product?')) {
+    if (window.confirm('Esta seguro que desea crear un nuevo producto?')) {
       try {
         setLoadingCreate(true);
         const res = await productService.createProduct();
@@ -68,11 +68,11 @@ const ProductListScreen = () => {
     <>
       <Row className='align-items-center'>
         <Col>
-          <h1>Products</h1>
+          <h1>Productos</h1>
         </Col>
         <Col className='text-end'>
           <Button className='my-3' onClick={createProductHandler}>
-            <FaPlus /> Create Product
+            <FaPlus /> Crear producto
           </Button>
         </Col>
       </Row>
@@ -89,10 +89,10 @@ const ProductListScreen = () => {
             <thead>
               <tr>
                 <th>ID</th>
-                <th>NAME</th>
-                <th>PRICE</th>
-                <th>CATEGORY</th>
-                <th>BRAND</th>
+                <th>NOMBRE</th>
+                <th>PRECIO</th>
+                <th>CATEGORIA</th>
+                <th>MARCA </th>
                 <th></th>
               </tr>
             </thead>
