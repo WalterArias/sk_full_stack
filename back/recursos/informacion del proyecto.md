@@ -83,6 +83,8 @@ A nivel general de la industria, a este enfoque específico de carpetas también
 - Alta Escalabilidad: Si mañana necesita agregar un módulo de "Usuarios" (users), simplemente se crea una carpeta llamada users con sus propios controladores, modelos y rutas, sin interferir con el código de products.
 - Fácil Mantenimiento: Un desarrollador que necesite modificar algo relacionado con los productos sabe exactamente que todo lo que busca está concentrado en una sola carpeta.
 - Bajo Acoplamiento: Los módulos son altamente independientes entre sí.
+# Arquitectura Global
+![alt text](image-2.png)
 
 # Diagrama de Componentes
 
