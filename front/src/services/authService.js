@@ -12,13 +12,13 @@ const request = async (url, options = {}) => {
   };
 
   try {
-    console.log("🚀 Request");
+  /*   console.log("Request");
     console.log("URL:", url);
-    console.log("Method:", config.method || "GET");
+    console.log("Method:", config.method || "GET"); */
 
     const response = await fetch(url, config);
 
-    console.log("✅ Status:", response.status);
+    console.log("Status:", response.status);
 
     if (response.status === 401) {
       localStorage.clear();
@@ -36,7 +36,7 @@ const request = async (url, options = {}) => {
       data = await response.text();
     }
 
-    console.log("✅ Response:", data);
+   /*  console.log(" Response:", data); */
 
     if (!response.ok) {
       throw new Error(

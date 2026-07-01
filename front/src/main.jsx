@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./assets/styles/bootstrap.custom.css";
+/* import "./assets/styles/bootstrap.custom.css";   */
 import "./assets/styles/index.css";
 import { productService } from "./services/productService"; // test
 
 window.productService = productService; //test
-// import 'bootstrap/dist/css/bootstrap.min.css';
+ import "bootstrap/dist/css/bootstrap.min.css";  
 import App from "./App";
 
 import {
@@ -77,7 +77,6 @@ const router = createBrowserRouter(
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-
     <AuthProvider>
       <CartProvider>
         {/*  <PayPalScriptProvider deferLoading={true}> */}
@@ -85,6 +84,5 @@ root.render(
         {/* </PayPalScriptProvider> */}
       </CartProvider>
     </AuthProvider>
-
   </React.StrictMode>,
 );
