@@ -1,4 +1,4 @@
-import { USERS_URL } from "../constants.js";
+import { PRODUCTS_URL, USERS_URL, UPLOAD_URL } from "../constants.js";
 
 // Función genérica para todas las peticiones
 const request = async (url, options = {}) => {
@@ -116,7 +116,7 @@ export const userService = {
 
 export const adminService = {
   createProduct: () =>
-    request("/api/products", {
+    request(PRODUCTS_URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -125,7 +125,7 @@ export const adminService = {
     }),
 
   updateProduct: (productId, data) =>
-    request(`/api/products/${productId}`, {
+    request(`${PRODUCTS_URL}/${productId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -134,12 +134,12 @@ export const adminService = {
     }),
 
   deleteProduct: (productId) =>
-    request(`/api/products/${productId}`, {
+    request(`${PRODUCTS_URL}/${productId}`, {
       method: "DELETE",
     }),
 
   uploadProductImage: (formData) =>
-    request("/api/upload", {
+    request(UPLOAD_URL, {
       method: "POST",
       body: formData,
     }),
