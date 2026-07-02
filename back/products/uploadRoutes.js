@@ -33,6 +33,46 @@ function fileFilter(req, file, cb) {
 const upload = multer({ storage, fileFilter });
 const uploadSingleImage = upload.single('image');
 
+/**
+ * @swagger
+ * tags:
+ *   name: Uploads
+ *   description: Carga de imágenes de productos
+ */
+
+/**
+ * @swagger
+ * /api/upload:
+ *   post:
+ *     summary: Subir una imagen (jpg, jpeg, png o webp)
+ *     tags: [Uploads]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         multipart/form-data:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               image:
+ *                 type: string
+ *                 format: binary
+ *     responses:
+ *       200:
+ *         description: Imagen subida correctamente
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: Image uploaded successfully
+ *                 image:
+ *                   type: string
+ *                   example: /uploads/image-1729000000000.png
+ *       400:
+ *         description: Archivo inválido (solo se permiten imágenes)
+ */
 router.post('/', (req, res) => {
   uploadSingleImage(req, res, function (err) {
     if (err) {
